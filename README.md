@@ -22,12 +22,13 @@ Entonces, en mi objetivo de ser financieramente libre, decidí combinar ambos mu
 
 Este trabajo es solo el primer paso en mi cruzada personal en busca de una respuesta, para ver qué tan cerca puedo hacerle frente a la volatilidad del mercado.
 
-[Informe de Análisis]((https://github.com/GUNAPILLCO/AST1_Trabajo_Final-/blob/main/Informe%20de%20An%C3%A1lisis))
-
-
-https://github.com/GUNAPILLCO/AST1_Trabajo_Final-/blob/main/Informe%20de%20An%C3%A1lisis
-
-Código de Análisis: 
-[![Abrir en Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/GUNAPILLCO/AST1_Trabajo_Final-/blob/main/GU_trabajo_final.ipynb)
+**Informe de Análisis:** 
+    
+  
+  [Informe de Análisis](./GU_Trabajo_Final_Informe.md)
+    
+**Código de Análisis:** 
+    
+  [![Abrir en Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/GUNAPILLCO/AST1_Trabajo_Final-/blob/main/GU_trabajo_final.ipynb)
 
 
