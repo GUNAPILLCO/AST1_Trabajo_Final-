@@ -29,6 +29,6 @@ Este trabajo es solo el primer paso en mi cruzada personal en busca de una respu
     
 **Código de Análisis:** 
     
-  [![Abrir en Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/GUNAPILLCO/AST1_Trabajo_Final-/blob/main/GU_trabajo_final.ipynb)
+  [![Abrir en Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/GUNAPILLCO/AST1_Trabajo_Final-/blob/main/GU_Trabajo_Final_Código.ipynb)
 
 
