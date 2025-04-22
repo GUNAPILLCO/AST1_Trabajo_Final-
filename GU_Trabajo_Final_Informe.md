@@ -83,11 +83,11 @@ A continuación, se muestran las predicciones y las métricas obtenidas para cad
 
 ## Análisis de resultados
 
-- **LSTM** mostró el **mejor rendimiento global** en la predicción del **precio de cierre**, con los **menores errores absolutos (MAE y RMSE)** y un **MAPE extremadamente bajo**, lo que indica una alta precisión relativa. Sin embargo, su **R² negativo** sugiere que aún no logra explicar adecuadamente la variabilidad total de la serie, posiblemente por subajuste o arquitectura no óptima.
+- **LSTM** mostró el **mejor rendimiento global** en la predicción del **close**, con los menores errores absolutos (MAE y RMSE) y un MAPE extremadamente bajo, lo que me indica que tiene una alta precisión relativa. Sin embargo, el R² negativo me sugiere que aún no logra explicar adecuadamente la variabilidad total de la serie, posiblemente por subajuste o arquitectura no óptima.
 
-- **ARIMA**, a pesar de ser un modelo clásico, tuvo errores considerablemente mayores en comparación con LSTM. El **MAPE moderado** indica cierto nivel de acierto en proporción al precio, pero el **R² muy negativo** confirma que el modelo no logra capturar adecuadamente la dinámica del mercado.
+- **ARIMA**, a pesar de ser un modelo clásico, tuvo errores considerablemente mayores en comparación con LSTM. En este modelo, lo entre con la serie close_diff (close con una diferenciación simple) y según las pruebas que hice no requería diferencial estacional. El MAPE moderado me indica cierto nivel de acierto en proporción al precio, pero el R² muy negativo confirma que el modelo no logra capturar adecuadamente la dinámica del mercado. 
 
-- **GARCH**, al estar orientado a la **predicción de la volatilidad** y no del precio, presentó **valores de error absolutos bajos** (por la escala de los log-retornos), pero un **MAPE elevado**. Aun así, fue el único modelo con **R² positivo**, lo que indica que logró capturar parcialmente la estructura de la volatilidad.
+- **GARCH**, al estar orientado a la predicción de la volatilidad y no del precio, me presentó valores de error absolutos bajos (por la escala de los log-retornos), pero un MAPE elevado. Aun así, fue el único modelo con R² positivo, lo que indica que logró capturar parcialmente la estructura de la volatilidad.
 
 ---
 
@@ -95,23 +95,27 @@ A continuación, se muestran las predicciones y las métricas obtenidas para cad
 
 ### Lecciones aprendidas
 
-- **LSTM** demostró ser prometedor para predecir precios en series complejas, aunque su potencial dependerá de una mejor optimización y mayor volumen de datos.
+- **LSTM** parece ser prometedor para predecir precios en series complejas, aunque su potencial dependerá de una mejor optimización y mayor volumen de datos.
 
 - **ARIMA** ofrece una referencia útil, pero queda limitado ante dinámicas no lineales o cambios estructurales frecuentes.
 
-- **GARCH** cumple su función en el modelado de **volatilidad**, siendo valioso para análisis de **riesgo** más que para predicción de precios.
+- **GARCH** cumple su función en el modelado de volatilidad, me serviría para hacer un análisis de riesgo más que para una predicción. 
+
 
 ### Problemas y ajustes
 
-- El **ajuste de hiperparámetros** y la arquitectura del LSTM podrían no haber sido los óptimos.
+- El ajuste de hiperparámetros y la arquitectura del modelo LSTM podrían no haber sido los más adecuados. Si bien el modelo utilizado en este trabajo es bastante simple, incluso al emplear una arquitectura LSTM más compleja en pruebas previas, las métricas de error no mostraron mejoras significativas
 
-- La **cantidad limitada de datos** y la posible falta de **características adicionales** (como indicadores técnicos) podrían haber afectado el rendimiento del modelo neuronal.
+- Yo mismo limité la cantidad de datos por una cuestión de tiempos de procesamiento y limitaciones de hardware. De hecho, dispongo de todos los contratos del año 2024,
+  que superan los 300 mil registros minuto a minuto.
+  
+- La cantidad limitada de datos y la posible falta de características adicionales (como indicadores técnicos) podrían haber afectado el rendimiento del modelo neuronal.
 
 ### Futuras mejoras
 
-- Explorar arquitecturas LSTM más profundas y con mayor regularización.
+- Seguir explorando arquitecturas LSTM más profundas y con mayor regularización, podríamos empezar a experimentar con más variables de entrada como el precio de apertura (open) o el volumen. 
 
-- Incorporar más datos históricos y variables exógenas (técnicas, fundamentales, etc.).
+- Incorporar todos los datos históricos disponibles y variables exógenas (indicadores técnicos, fundamentales, etc.).
 
 - Evaluar modelos alternativos como **XGBoost** o **Redes Neuronales Convolucionales (CNN)** aplicadas a series temporales.
 
